@@ -1,4 +1,4 @@
-var backElements=[],backData=[],clientCSS="",specificCSS=[],backThread=null,addedBackStyle=false;
+var types=["fireworks","circles","boxes"],backElements=[],backData=[],clientCSS="",specificCSS=[],backThread=null,addedBackStyle=false;
 function backdropInit(){
   var styleTag=document.createElement("style");
   styleTag.setAttribute("id","backdrop_style");
@@ -8,7 +8,7 @@ function backdropInit(){
 var backdrop={
   init: function(){if (document.getElementById("backdrop_style")==null) backgroundInit();},  
   add: function(type,element,nickname,extraindex){
-    var localParents=[];
+    var multiple=false,selected,localParents=[];
     if (!addedBackStyle){
       backdropInit();
       addedBackStyle=true;
@@ -35,6 +35,12 @@ var backdrop={
         var single=localParents[extraindex];
         localParents=[];
         localParents.push(single);
+      }
+    }
+    for (var i=0;i<types.length;i++){
+      if (type==types[i]){
+        selected=types[i];
+        break;
       }
     }
     addElements(localParents,selected,nickname);
