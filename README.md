@@ -1,0 +1,1 @@
+Online "operating system", edit [this line](https://github.com/donno2048/pc/blob/master/indexMotor.js#L31) to add/remove programs, and [this line](https://github.com/donno2048/pc/blob/master/indexMotor.js#L12) to add/remove backgrounds (you need to add them to the repo too)
